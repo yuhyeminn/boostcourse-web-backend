@@ -1,0 +1,5 @@
+package kr.or.connect.guestbook.dao;
+
+public class LogDao {
+
+}
