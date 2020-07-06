@@ -24,4 +24,6 @@
 <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.mockito.Mock"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="springfox.documentation.service.Contact"/>
 </qualifiedTypeNameHistroy>

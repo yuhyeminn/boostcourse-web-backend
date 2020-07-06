@@ -59,6 +59,8 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="kr.or.connect.reservation"/>
+			<item value="org.edwith.webbe.calculator"/>
 			<item value="kr.or.connect.guestbook"/>
 			<item value="kr.or.connect.mvcexam"/>
 			<item value="kr.or.connect.daoexam"/>
@@ -72,6 +74,8 @@
 			<item value="org.edwith.webbe"/>
 		</list>
 		<list key="artifactId">
+			<item value="reservation"/>
+			<item value="calculator"/>
 			<item value="guestbook"/>
 			<item value="mvcexam"/>
 			<item value="daoexam"/>
