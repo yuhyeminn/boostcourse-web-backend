@@ -7,13 +7,15 @@ C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\
 \mavenweb\src\main\resources
 C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1930883004.index
 \firstweb\src
+C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2164233797.index
+\guestbook\src\main\java
 C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2740370173.index
 \calculator\src\main\resources
 C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\111433747.index
 \guestbook\src\main\java
-C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1249292192.index
-\guestbook2\src\main\resources
 C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\760230346.index
 \mvcexam\src\main\resources
+C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1249292192.index
+\guestbook2\src\main\resources
 C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1148527615.index
 \reservation\src\main\resources
