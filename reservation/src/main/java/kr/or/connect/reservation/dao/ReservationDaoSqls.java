@@ -1,13 +1,11 @@
 package kr.or.connect.reservation.dao;
 
 public class ReservationDaoSqls {
-	public static final String SELECT_CATEGORIES = "select c.id as id, c.name as name, count(p.id) as count from category as c left join product as p on c.id = p.category_id group by c.id";
-	
-	/*
-	 select p.id, p.category_id, di.id as display_info_id,p.description, p.content, p.event,
-		(select name from category as c where p.category_id = c.id) as name,
-		di.opening_hours, di.place_name, di.place_lot, di.place_street, di.tel, di.homepage, di.email, p.create_date, p.modify_date, 
-        (select file_id from product_image as pi where p.id = pi.product_id and type ="ma") as file_id
-	from product as p left join display_info as di on p.id = di.product_id;
-	  */
+	public static final String SELECT_CATEGORIES = "select c.id as id, c.name as name, count(*) as count from category as c left join product as p on c.id = p.category_id left join display_info as di on p.id = di.product_id group by c.id";
+	public static final String SELECT_PRODUCTS = " select p.id, p.category_id, di.id as display_info_id,p.description, p.content, p.event, (select name from category as c where p.category_id = c.id) as name, di.opening_hours, di.place_name, di.place_lot, di.place_street, di.tel, di.homepage, di.email, p.create_date, p.modify_date, (select file_id from product_image as pi where p.id = pi.product_id and type =\"ma\") as file_id from product as p left join display_info as di on p.id = di.product_id ORDER BY p.id limit :start, :limit";
+	public static final String SELECT_PRODUCTS_BY_CATEGORYID = " select p.id, p.category_id, di.id as display_info_id,p.description, p.content, p.event, (select name from category as c where p.category_id = c.id) as name, di.opening_hours, di.place_name, di.place_lot, di.place_street, di.tel, di.homepage, di.email, p.create_date, p.modify_date, (select file_id from product_image as pi where p.id = pi.product_id and type =\"ma\") as file_id from product as p left join display_info as di on p.id = di.product_id where p.category_id = :categoryId ORDER BY p.id limit :start, :limit";
+	public static final String SELECT_PRODUCT_COUNT = "SELECT count(*) FROM display_info";
+	public static final String SELECT_PRODUCT_BY_CATEGORY_COUNT = "SELECT count(*) FROM display_info where product_id in (select id from product where category_id = :categoryId)";
+	public static final String SELECT_PROMOTIONS = "select pr.id,pd.id as product_id,pd.category_id,(select name from category as c where pd.category_id = c.id) as categoryName, pd.description, (select file_id from product_image as pi where pd.id = pi.product_id and type =\"ma\") as file_id from promotion pr left join product pd on pr.product_id = pd.id";
+	public static final String SELECT_PRODUCT_BY_DISPLAY_ID = "select p.id, p.category_id, di.id as display_info_id,p.description, p.content, p.event, (select name from category as c where p.category_id = c.id) as name, di.opening_hours, di.place_name, di.place_lot, di.place_street, di.tel, di.homepage, di.email, p.create_date, p.modify_date, (select file_id from product_image as pi where p.id = pi.product_id and type =\"ma\") as file_id from product as p left join display_info as di on p.id = di.product_id where di.id = :displayId";
 }
