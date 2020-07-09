@@ -15,8 +15,13 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import kr.or.connect.reservation.dto.Category;
+import kr.or.connect.reservation.dto.DisplayImage;
 import kr.or.connect.reservation.dto.Product;
+import kr.or.connect.reservation.dto.ProductImage;
+import kr.or.connect.reservation.dto.ProductPrice;
 import kr.or.connect.reservation.dto.Promotion;
+import kr.or.connect.reservation.dto.ReservationUserComment;
+import kr.or.connect.reservation.service.CommentService;
 import kr.or.connect.reservation.service.ReservationService;
 
 
@@ -25,6 +30,9 @@ import kr.or.connect.reservation.service.ReservationService;
 public class ReservationApiController {
 	@Autowired
 	ReservationService reservationService;
+	
+	@Autowired
+	CommentService commentService;
 	
 	@ApiOperation(value = "카테고리 목록 구하기")
     @ApiResponses({  // Response Message에 대한 Swagger 설명
@@ -103,13 +111,48 @@ public class ReservationApiController {
 		Product p = reservationService.getProductByDisplayId(displayId);
 		map.put("product", p);
 		
+		int productId = p.getId();
+
 		//전시상품 이미지 목록
+		List<ProductImage> productImageList = reservationService.getProductImages(productId);
+		map.put("productImages", productImageList);
 		
 		//전시정보 이미지 목록
+		List<DisplayImage> displayImageList = reservationService.getDisplayImages(displayId);
+		map.put("displayImages", displayImageList);
 		
 		//평균 평점
+		int avgScore = reservationService.getAvgScoreByProductId(productId);
+		map.put("avgScore",avgScore);
 		
 		//상품 가격 목록
+		List<ProductPrice> productPriceList = reservationService.getProductPricesById(productId);
+		map.put("productPrices", productPriceList);
+		
+		return map;
+	}
+	
+	@ApiOperation(value = "댓글 목록 구하기")
+	@ApiResponses({  // Response Message에 대한 Swagger 설명
+		@ApiResponse(code = 200, message = "OK"),
+		@ApiResponse(code = 500, message = "Exception")
+	})
+	@GetMapping("/comments")
+	public Map<String, Object> comments(@RequestParam(name="productId", required=false)int productId,
+										@RequestParam(name="start",required=false, defaultValue="0")int start) {
+		Map<String, Object> map = new HashMap<>();
+		
+		//해당 상품 전체 댓글 수
+		int totalCount = commentService.getCommentsCount(productId);
+		map.put("totalCount", totalCount);
+		
+		//해당 상품 댓글 목록
+		List<ReservationUserComment> list = commentService.getComments(productId,start);
+		map.put("products", list);
+		
+		//읽어온 댓글 수
+		int commentCount = list.size();
+		map.put("commentCount", commentCount);
 		
 		return map;
 	}

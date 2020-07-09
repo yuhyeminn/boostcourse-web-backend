@@ -1,9 +1,0 @@
-package kr.or.connect.guestbook.config;
-
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-@ComponentScan(basePackages = {})
-public class ApplicationConfig {
-
-}

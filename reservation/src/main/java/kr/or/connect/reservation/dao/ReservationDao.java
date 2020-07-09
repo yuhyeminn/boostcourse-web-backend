@@ -1,12 +1,6 @@
 package kr.or.connect.reservation.dao;
 
-import static kr.or.connect.reservation.dao.ReservationDaoSqls.SELECT_CATEGORIES;
-import static kr.or.connect.reservation.dao.ReservationDaoSqls.SELECT_PRODUCTS;
-import static kr.or.connect.reservation.dao.ReservationDaoSqls.SELECT_PRODUCTS_BY_CATEGORYID;
-import static kr.or.connect.reservation.dao.ReservationDaoSqls.SELECT_PRODUCT_BY_CATEGORY_COUNT;
-import static kr.or.connect.reservation.dao.ReservationDaoSqls.SELECT_PRODUCT_COUNT;
-import static kr.or.connect.reservation.dao.ReservationDaoSqls.SELECT_PROMOTIONS;
-import static kr.or.connect.reservation.dao.ReservationDaoSqls.SELECT_PRODUCT_BY_DISPLAY_ID;
+import static kr.or.connect.reservation.dao.ReservationDaoSqls.*;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -21,7 +15,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import kr.or.connect.reservation.dto.Category;
+import kr.or.connect.reservation.dto.DisplayImage;
 import kr.or.connect.reservation.dto.Product;
+import kr.or.connect.reservation.dto.ProductImage;
+import kr.or.connect.reservation.dto.ProductPrice;
 import kr.or.connect.reservation.dto.Promotion;
 
 @Repository
@@ -31,6 +28,9 @@ public class ReservationDao {
     private RowMapper<Category> categoryRowMapper = BeanPropertyRowMapper.newInstance(Category.class);
     private RowMapper<Product> productRowMapper = BeanPropertyRowMapper.newInstance(Product.class);
     private RowMapper<Promotion> promotionRowMapper = BeanPropertyRowMapper.newInstance(Promotion.class);
+    private RowMapper<ProductImage> productImageRowMapper = BeanPropertyRowMapper.newInstance(ProductImage.class);
+    private RowMapper<DisplayImage> displayImageRowMapper = BeanPropertyRowMapper.newInstance(DisplayImage.class);
+    private RowMapper<ProductPrice> productPriceRowMapper = BeanPropertyRowMapper.newInstance(ProductPrice.class);
     
 	public ReservationDao(DataSource dataSource) {
 		 this.jdbc = new NamedParameterJdbcTemplate(dataSource);
@@ -73,5 +73,29 @@ public class ReservationDao {
 		Map<String, Integer> param = new HashMap<>();
 		param.put("displayId", displayId);
 		return jdbc.queryForObject(SELECT_PRODUCT_BY_DISPLAY_ID, param,productRowMapper);
+	}
+
+	public List<ProductImage> selectProductImagesByProductId(int productId) {
+		Map<String, Integer> param = new HashMap<>();
+		param.put("productId", productId);
+		return jdbc.query(SELECT_PRODUCT_IMAGES_BY_ID, param, productImageRowMapper);
+	}
+
+	public List<DisplayImage> selectDisplayImagesByDisplayId(int displayId) {
+		Map<String, Integer> param = new HashMap<>();
+		param.put("displayId", displayId);
+		return jdbc.query(SELECT_DISPLAY_IMAGES_BY_ID, param, displayImageRowMapper);
+	}
+
+	public int selectAvgScoreByProductId(int productId) {
+		Map<String, Integer> param = new HashMap<>();
+		param.put("productId", productId);
+		return jdbc.queryForObject(SELECT_AVG_SCORE_BY_PRODUCTID, param, Integer.class);
+	}
+
+	public List<ProductPrice> selectProductPricesById(int productId) {
+		Map<String, Integer> param = new HashMap<>();
+		param.put("productId", productId);
+		return jdbc.query(SELECT_PRODUCT_PRICE_BY_ID, param, productPriceRowMapper);
 	}
 }

@@ -8,10 +8,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kr.or.connect.reservation.dao.ReservationDao;
 import kr.or.connect.reservation.dto.Category;
+import kr.or.connect.reservation.dto.DisplayImage;
 import kr.or.connect.reservation.dto.Product;
+import kr.or.connect.reservation.dto.ProductImage;
+import kr.or.connect.reservation.dto.ProductPrice;
 import kr.or.connect.reservation.dto.Promotion;
 import kr.or.connect.reservation.service.ReservationService;
-import static kr.or.connect.reservation.service.ReservationService.*;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
@@ -64,6 +66,29 @@ public class ReservationServiceImpl implements ReservationService {
 	public Product getProductByDisplayId(int displayId) {
 		Product p = reservationDao.selectProductByDisplayId(displayId);
 		return p;
+	}
+
+	@Override
+	public List<ProductImage> getProductImages(int productId) {
+		List<ProductImage> list = reservationDao.selectProductImagesByProductId(productId);
+		return list;
+	}
+
+	@Override
+	public List<DisplayImage> getDisplayImages(int displayId) {
+		List<DisplayImage> list = reservationDao.selectDisplayImagesByDisplayId(displayId);
+		return list;
+	}
+
+	@Override
+	public int getAvgScoreByProductId(int productId) {
+		return reservationDao.selectAvgScoreByProductId(productId);
+	}
+
+	@Override
+	public List<ProductPrice> getProductPricesById(int productId) {
+		List<ProductPrice> list = reservationDao.selectProductPricesById(productId);
+		return list;
 	}
 
 }

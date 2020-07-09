@@ -1,7 +1,9 @@
 package kr.or.connect.reservation.dto;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Product implements Serializable{
 	
@@ -24,7 +26,9 @@ public class Product implements Serializable{
 	private String tel;
 	private String homepage;
 	private String email;
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss.0")
 	private Date createDate;
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss.0")
 	private Date modifyDate;
 	private int fileId;
 	
