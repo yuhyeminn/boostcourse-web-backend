@@ -28,7 +28,7 @@ public class GuessNumberController {
 			// 각 상황에 맞는 메시지를 message변수에 저장을 한 후 jsp에게 전달하기 위해서 ModelMap의 addAttribute메소드를 통해 전달하게 됩니다.
 			int count = (Integer)session.getAttribute("count");
 			int randomNumber = (Integer)session.getAttribute("randomNumber");
-		
+			System.out.println(randomNumber);
 			
 			if(number < randomNumber) {
 				message = "입력한 값은 내가 생각하고 있는 숫자보다 작습니다.";

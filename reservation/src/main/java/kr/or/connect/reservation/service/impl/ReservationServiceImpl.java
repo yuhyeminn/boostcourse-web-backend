@@ -31,6 +31,7 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
+	@Transactional
 	public List<Product> getProducts(int categoryId, int start) {
 		List<Product> list = null;
 		int limit = ReservationService.PRODUCT_LIMIT;
@@ -44,6 +45,7 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
+	@Transactional
 	public int getProductCount(int categoryId) {
 		int result = 0;
 		if(categoryId == 0) {
@@ -55,6 +57,7 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
+	@Transactional
 	public List<Promotion> getPromotions() {
 		
 		List<Promotion> list = reservationDao.selectPromotionsAll();
@@ -63,29 +66,34 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
+	@Transactional
 	public Product getProductByDisplayId(int displayId) {
 		Product p = reservationDao.selectProductByDisplayId(displayId);
 		return p;
 	}
 
 	@Override
+	@Transactional
 	public List<ProductImage> getProductImages(int productId) {
 		List<ProductImage> list = reservationDao.selectProductImagesByProductId(productId);
 		return list;
 	}
 
 	@Override
+	@Transactional
 	public List<DisplayImage> getDisplayImages(int displayId) {
 		List<DisplayImage> list = reservationDao.selectDisplayImagesByDisplayId(displayId);
 		return list;
 	}
 
 	@Override
+	@Transactional
 	public int getAvgScoreByProductId(int productId) {
 		return reservationDao.selectAvgScoreByProductId(productId);
 	}
 
 	@Override
+	@Transactional
 	public List<ProductPrice> getProductPricesById(int productId) {
 		List<ProductPrice> list = reservationDao.selectProductPricesById(productId);
 		return list;

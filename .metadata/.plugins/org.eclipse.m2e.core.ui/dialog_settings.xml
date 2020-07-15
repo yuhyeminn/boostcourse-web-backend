@@ -44,6 +44,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Workspaces\boostcourse_workspace\securityexam\src\main\resources"/>
 			<item value="C:\Workspaces\boostcourse_workspace\Servers"/>
 			<item value="C:\Workspaces\boostcourse_workspace\diexam01"/>
 			<item value="C:\Workspaces\boostcourse_workspace\mavenweb\pom.xml"/>
@@ -59,6 +60,8 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="org.edwith.webbe"/>
+			<item value="org.edwith.webbe.securityexam"/>
 			<item value="kr.or.connect.reservation"/>
 			<item value="org.edwith.webbe.calculator"/>
 			<item value="kr.or.connect.guestbook"/>
@@ -70,10 +73,11 @@
 			<item value="kr.or.connect.mavenweb"/>
 		</list>
 		<list key="groupId">
-			<item value="kr.or.connect"/>
 			<item value="org.edwith.webbe"/>
+			<item value="kr.or.connect"/>
 		</list>
 		<list key="artifactId">
+			<item value="securityexam"/>
 			<item value="reservation"/>
 			<item value="calculator"/>
 			<item value="guestbook"/>
