@@ -5,6 +5,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import springfox.documentation.builders.PathSelectors;
@@ -54,5 +56,16 @@ public class MvcConfig implements WebMvcConfigurer {
 			ApiInfo apiInfo =
 					new ApiInfo("Swagger Sample", "APIs Sample", "Sample Doc 0.1v", "", contact, "This sentence will be display.", "/");
 			return apiInfo;
+		}
+		
+		// Spring MVC에서 jsp view 가 위치하는 경로를 설정한다.
+		@Override
+		public void configureViewResolvers(ViewResolverRegistry registry) {
+			registry.jsp("/WEB-INF/view/", ".jsp");
+		}
+		   //  /resources 경로에 있는 자료들을 /resources/**로 접근하게 합니다.
+		@Override
+		public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+			registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 		}
 }

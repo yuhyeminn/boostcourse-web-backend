@@ -11,7 +11,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 	// 여러분은 ApplicationConfig.class를 작성해줘야 합니다.
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[]{ApplicationConfig.class};
+		return new Class<?>[]{ApplicationConfig.class, SecurityConfig.class};
 	}
 	
 	// Spring MVC 설정 파일 클래스를 지정합니다.

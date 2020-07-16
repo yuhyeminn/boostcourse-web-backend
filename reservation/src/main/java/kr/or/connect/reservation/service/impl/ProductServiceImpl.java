@@ -6,20 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import kr.or.connect.reservation.dao.ReservationDao;
+import kr.or.connect.reservation.dao.ProductDao;
 import kr.or.connect.reservation.dto.Category;
 import kr.or.connect.reservation.dto.DisplayImage;
 import kr.or.connect.reservation.dto.Product;
 import kr.or.connect.reservation.dto.ProductImage;
 import kr.or.connect.reservation.dto.ProductPrice;
 import kr.or.connect.reservation.dto.Promotion;
-import kr.or.connect.reservation.service.ReservationService;
+import kr.or.connect.reservation.service.ProductService;
 
 @Service
-public class ReservationServiceImpl implements ReservationService {
+public class ProductServiceImpl implements ProductService {
 
 	@Autowired
-	ReservationDao reservationDao;
+	ProductDao reservationDao;
 	
 	@Override
 	@Transactional
@@ -34,7 +34,7 @@ public class ReservationServiceImpl implements ReservationService {
 	@Transactional
 	public List<Product> getProducts(int categoryId, int start) {
 		List<Product> list = null;
-		int limit = ReservationService.PRODUCT_LIMIT;
+		int limit = ProductService.PRODUCT_LIMIT;
 		//categoryId가 0이거나 없을 경우 전체 목록 조회
 		if(categoryId == 0) {
 			list = reservationDao.selectProductsAll(start, limit);

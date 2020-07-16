@@ -1,6 +1,6 @@
 package kr.or.connect.reservation.dao;
 
-import static kr.or.connect.reservation.dao.ReservationDaoSqls.*;
+import static kr.or.connect.reservation.dao.ProductDaoSqls.*;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -22,7 +22,7 @@ import kr.or.connect.reservation.dto.ProductPrice;
 import kr.or.connect.reservation.dto.Promotion;
 
 @Repository
-public class ReservationDao {
+public class ProductDao {
 	
 	private NamedParameterJdbcTemplate jdbc;
     private RowMapper<Category> categoryRowMapper = BeanPropertyRowMapper.newInstance(Category.class);
@@ -32,7 +32,7 @@ public class ReservationDao {
     private RowMapper<DisplayImage> displayImageRowMapper = BeanPropertyRowMapper.newInstance(DisplayImage.class);
     private RowMapper<ProductPrice> productPriceRowMapper = BeanPropertyRowMapper.newInstance(ProductPrice.class);
     
-	public ReservationDao(DataSource dataSource) {
+	public ProductDao(DataSource dataSource) {
 		 this.jdbc = new NamedParameterJdbcTemplate(dataSource);
 	}
 

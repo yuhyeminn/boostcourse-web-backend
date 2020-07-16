@@ -8,6 +8,6 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_202"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0&quot; -Dcatalina.home=&quot;C:\dev\apache-tomcat-8.5.47\apache-tomcat-8.5.47&quot; -Dwtp.deploy=&quot;C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps&quot; -Djava.endorsed.dirs=&quot;C:\dev\apache-tomcat-8.5.47\apache-tomcat-8.5.47\endorsed&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;C:\Workspaces\boostcourse_workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0&quot; -Dcatalina.home=&quot;C:\dev\apache-tomcat-8.5.47\apache-tomcat-8.5.47&quot; -Dwtp.deploy=&quot;C:\Workspaces\boostcourse_workspace&quot; -Djava.endorsed.dirs=&quot;C:\dev\apache-tomcat-8.5.47\apache-tomcat-8.5.47\endorsed&quot;"/>
 <stringAttribute key="server-id" value="Tomcat v8.5 Server at localhost"/>
 </launchConfiguration>

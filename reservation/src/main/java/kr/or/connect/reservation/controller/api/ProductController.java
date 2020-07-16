@@ -22,17 +22,14 @@ import kr.or.connect.reservation.dto.ProductPrice;
 import kr.or.connect.reservation.dto.Promotion;
 import kr.or.connect.reservation.dto.ReservationUserComment;
 import kr.or.connect.reservation.service.CommentService;
-import kr.or.connect.reservation.service.ReservationService;
+import kr.or.connect.reservation.service.ProductService;
 
 
 @RestController
 @RequestMapping(path="/api")
-public class ReservationApiController {
+public class ProductController {
 	@Autowired
-	ReservationService reservationService;
-	
-	@Autowired
-	CommentService commentService;
+	ProductService reservationService;
 	
 	@ApiOperation(value = "카테고리 목록 구하기")
     @ApiResponses({  // Response Message에 대한 Swagger 설명
@@ -131,31 +128,4 @@ public class ReservationApiController {
 		
 		return map;
 	}
-	
-	@ApiOperation(value = "댓글 목록 구하기")
-	@ApiResponses({  // Response Message에 대한 Swagger 설명
-		@ApiResponse(code = 200, message = "OK"),
-		@ApiResponse(code = 500, message = "Exception")
-	})
-	@GetMapping("/comments")
-	public Map<String, Object> comments(@RequestParam(name="productId", required=false)int productId,
-										@RequestParam(name="start",required=false, defaultValue="0")int start) {
-		Map<String, Object> map = new HashMap<>();
-		
-		//해당 상품 전체 댓글 수
-		int totalCount = commentService.getCommentsCount(productId);
-		map.put("totalCount", totalCount);
-		
-		//해당 상품 댓글 목록
-		List<ReservationUserComment> list = commentService.getComments(productId,start);
-		map.put("products", list);
-		
-		//읽어온 댓글 수
-		int commentCount = list.size();
-		map.put("commentCount", commentCount);
-		
-		return map;
-	}
-	
-	
 }

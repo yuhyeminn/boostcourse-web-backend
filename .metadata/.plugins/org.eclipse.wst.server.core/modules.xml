@@ -6,4 +6,5 @@
   <module moduleId="org.eclipse.jst.jee.server:guestbook" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:firstweb" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:exam25" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:reservation" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>

@@ -26,7 +26,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import kr.or.connect.reservation.config.ApplicationConfig;
 import kr.or.connect.reservation.config.WebAppInitializer;
-import kr.or.connect.reservation.controller.api.ReservationApiController;
+import kr.or.connect.reservation.controller.api.ProductController;
 import kr.or.connect.reservation.dto.ReservationUserComment;
 import kr.or.connect.reservation.service.CommentService;
 
@@ -35,7 +35,7 @@ import kr.or.connect.reservation.service.CommentService;
 @ContextConfiguration(classes = {WebAppInitializer.class, ApplicationConfig.class })
 public class ReservationApiControllerTest {
     @InjectMocks
-    public ReservationApiController reservationApiController;
+    public ProductController productController;
 
     @Mock
     CommentService CommentService;
@@ -45,7 +45,7 @@ public class ReservationApiControllerTest {
     @Before
     public void createController() {
         MockitoAnnotations.initMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(reservationApiController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(productController).build();
     }
 
     @Test
