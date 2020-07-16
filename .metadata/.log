@@ -169,3 +169,27 @@ java.net.UnknownHostException: jope.ow2.org
 
 !ENTRY org.eclipse.jface.text 2 0 2020-07-16 11:45:12.802
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.wst.server.core 4 0 2020-07-16 12:07:07.704
+!MESSAGE Server Tomcat v8.5 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+
+!ENTRY org.eclipse.wst.server.core 4 0 2020-07-16 13:10:49.643
+!MESSAGE Server Tomcat v8.5 Server at localhost was unable to start within 45 seconds. If the server requires more time, try increasing the timeout in the server editor.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2020-07-16 14:02:52.934
+!MESSAGE Port 9090 required by Tomcat v8.5 Server at localhost is already in use. The server may already be running in another process, or a system process may be using the port. To start this server you will need to stop the other process or change the port number(s).
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2020-07-16 15:25:21.496
+!MESSAGE Could not publish server configuration for Tomcat v8.5 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2020-07-16 15:25:21.497
+!MESSAGE Multiple Contexts have a path of "/securityexam".
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2020-07-16 15:26:40.846
+!MESSAGE Could not publish server configuration for Tomcat v8.5 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2020-07-16 15:26:40.846
+!MESSAGE Multiple Contexts have a path of "/securityexam".
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2020-07-16 15:27:02.706
+!MESSAGE Could not publish server configuration for Tomcat v8.5 Server at localhost.
+!SUBENTRY 1 org.eclipse.jst.server.tomcat.core 4 0 2020-07-16 15:27:02.706
+!MESSAGE Multiple Contexts have a path of "/securityexam".

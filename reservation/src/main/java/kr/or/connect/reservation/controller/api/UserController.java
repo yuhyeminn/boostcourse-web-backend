@@ -1,20 +1,30 @@
 package kr.or.connect.reservation.controller.api;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+import kr.or.connect.reservation.service.UserService;
+
+@Controller
 @RequestMapping(path="/users")
 public class UserController {
-	@GetMapping("/loginform")
-	public String loginform() {
-		return "users/loginform";
-	}
-	
-	@RequestMapping("/loginerror")
-	public String loginerror(@RequestParam("login_error")String loginError) {
-		return "users/loginerror";
-	}
+	 // 스프링 컨테이너가 생성자를 통해 자동으로 주입한다.
+    private final UserService userService;
+
+    public UserController(UserService userService){
+        this.userService = userService;
+    }
+
+    @GetMapping("/loginform")
+    public String loginform(){
+        return "users/loginform";
+    }
+
+    @RequestMapping("/loginerror")
+    public String loginerror(@RequestParam("login_error")String loginError){
+        return "users/loginerror";
+    }
+
 }

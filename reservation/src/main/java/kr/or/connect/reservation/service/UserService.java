@@ -1,5 +1,7 @@
 package kr.or.connect.reservation.service;
 
-public interface UserService {
+import kr.or.connect.reservation.service.security.UserDbService;
+
+public interface UserService extends UserDbService{
 
 }
