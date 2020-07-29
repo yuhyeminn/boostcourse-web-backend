@@ -58,6 +58,7 @@ public class MvcConfig implements WebMvcConfigurer {
 					new ApiInfo("Swagger Sample", "APIs Sample", "Sample Doc 0.1v", "", contact, "This sentence will be display.", "/");
 			return apiInfo;
 		}
+
 		
 		// Spring MVC에서 jsp view 가 위치하는 경로를 설정한다.
 		@Override
@@ -68,6 +69,9 @@ public class MvcConfig implements WebMvcConfigurer {
 		@Override
 		public void addResourceHandlers(final ResourceHandlerRegistry registry) {
 			registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+			registry.addResourceHandler("swagger-ui.html") .addResourceLocations("classpath:/META-INF/resources/");
+			registry.addResourceHandler("/webjars/**")
+		       .addResourceLocations("classpath:/META-INF/resources/webjars/");
 		}
 		 // '/' 로 요청이 오면 '/main'으로 리다이렉트 하도록 합니다.
 		public void addViewControllers(ViewControllerRegistry registry) {

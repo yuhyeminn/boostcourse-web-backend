@@ -28,10 +28,13 @@
 <fullyQualifiedTypeName name="kr.or.connect.reservation.service.CommentService"/>
 <fullyQualifiedTypeName name="javax.servlet.Filter"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="kr.or.connect.reservation.dto.User"/>
 <fullyQualifiedTypeName name="kr.or.connect.reservation.config.SecurityConfig"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="kr.or.connect.reservation.dto.ReservationInfo"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 </qualifiedTypeNameHistroy>
