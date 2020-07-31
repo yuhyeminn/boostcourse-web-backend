@@ -34,7 +34,7 @@
 	<section name="org.springsource.ide.eclipse.commons.quicksearch.ui.QuickSearchDialog.DIALOG_SETTINGS">
 		<item value="" key="PATH_FILTER"/>
 		<item value="true" key="CASE_SENSITIVE"/>
-		<item value="insertAction" key="LAST_QUERY"/>
+		<item value="singleto" key="LAST_QUERY"/>
 		<item value="false" key="KEEP_OPEN"/>
 		<list key="SASH_WEIGHTS">
 			<item value="833"/>
@@ -43,14 +43,14 @@
 		<list key="COLUMN_WIDTHS">
 			<item value="40"/>
 			<item value="400"/>
-			<item value="101"/>
+			<item value="118"/>
 		</list>
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 			<item value="500" key="DIALOG_HEIGHT"/>
-			<item value="267" key="DIALOG_X_ORIGIN"/>
-			<item value="190" key="DIALOG_Y_ORIGIN"/>
+			<item value="-683" key="DIALOG_X_ORIGIN"/>
+			<item value="363" key="DIALOG_Y_ORIGIN"/>
 		</section>
 	</section>
 </section>

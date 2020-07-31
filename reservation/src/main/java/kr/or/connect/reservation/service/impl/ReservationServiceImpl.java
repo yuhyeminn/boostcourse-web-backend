@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,12 +50,28 @@ public class ReservationServiceImpl implements ReservationService{
 			rp.setReservationInfoId(resvId);
 			long rpId = reservationInfoPriceDao.addReservationInfoPrice(rp);
 			
-			//반환된 ReservationInfoPrice id set하여 다시 prices에 add
+			//반환된 ReservationInfoPrice id set함
 			rp.setId(rpId);
 		}
 		r.setPrices(prices);
 		
 		return r;
+	}
+
+	@Override
+	@Transactional
+	public List<Map<String, Object>> selectReservationInfosByEmail(String userId) {
+		
+		List<Map<String, Object>> items = reservationInfoDao.selectReservationInfosByEmail(userId);
+		
+		return items;
+	}
+
+	@Override
+	@Transactional
+	public int updateReservationCancelFlag(int resvId) {
+		int result = reservationInfoDao.updateReservationCancelFlag(resvId);
+		return result;
 	}
 
 }
