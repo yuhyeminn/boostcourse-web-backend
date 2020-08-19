@@ -105,12 +105,11 @@
     	<version>${jackson2.version}</version>
 	</dependency>
 	
-	 <dependency>
-         <groupId>org.mockito</groupId>
-         <artifactId>mockito-all</artifactId>
-         <version>1.10.19</version>
-      </dependency>
-
+	<dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
+        <version>1.10.19</version>
+    </dependency>
     
     <dependency>
     	<groupId>com.jayway.jsonpath</groupId>
@@ -118,7 +117,37 @@
     	<version>2.4.0</version>
 	</dependency>
     
+    <!-- 로깅 관련 -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.25</version>
+    </dependency>
+
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.3</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>1.7.25</version>
+    </dependency>
         
+    <!-- 파일 업로드 관련 -->
+	<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>1.2.1</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>1.4</version>
+	</dependency>
+    
   </dependencies>
   
   <build>

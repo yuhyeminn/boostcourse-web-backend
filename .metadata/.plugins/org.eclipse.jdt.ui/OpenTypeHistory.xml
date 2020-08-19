@@ -2,4 +2,6 @@
 <typeInfoHistroy>
 <typeInfo handle="=securityexam/src\/main\/java&lt;org.edwith.webbe.securityexam.service.security{UserDbService.java[UserDbService" modifiers="513" timestamp="1594776451256"/>
 <typeInfo handle="=reservation/C:\/Users\/hyemin\/.m2\/repository\/org\/springframework\/security\/spring-security-web\/5.2.2.RELEASE\/spring-security-web-5.2.2.RELEASE.jar&lt;org.springframework.security.web.context(AbstractSecurityWebApplicationInitializer.class[AbstractSecurityWebApplicationInitializer" modifiers="1057" timestamp="1594863846369"/>
+<typeInfo handle="=guestbook/C:\/Users\/hyemin\/.m2\/repository\/org\/springframework\/spring-webmvc\/4.3.5.RELEASE\/spring-webmvc-4.3.5.RELEASE.jar&lt;org.springframework.web.servlet.handler(HandlerInterceptorAdapter.class[HandlerInterceptorAdapter" modifiers="1057" timestamp="1594864036410"/>
+<typeInfo handle="=guestbook/C:\/Users\/hyemin\/.m2\/repository\/org\/springframework\/spring-web\/4.3.5.RELEASE\/spring-web-4.3.5.RELEASE.jar&lt;org.springframework.web.method.support(HandlerMethodArgumentResolver.class[HandlerMethodArgumentResolver" modifiers="1537" timestamp="1594864037018"/>
 </typeInfoHistroy>
